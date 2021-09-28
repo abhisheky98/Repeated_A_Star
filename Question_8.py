@@ -12,20 +12,20 @@ df = pd.DataFrame(columns=['p',
 p = 0.11
 x = 0
 
-while p<0.31:
+while p<0.31: #recording values between 0.01 <= p < 0.31
 
     x= x + 1
 
-    grid = gen_grid(101, p)
+    grid = gen_grid(101, p) #generating grid
 
-    result, path, dis, cells, start, stop = smart_repeated_a_star(grid, 101, p, 2)
+    result, path, dis, cells, start, stop = smart_repeated_a_star(grid, 101, p, 2) #running smart repeated A* on the generated grid
 
     if result:
 
         Smart_t = stop-start
         Smart_l = len(path)
 
-        result, path, dis, cells, start, stop = repeated_a_star(grid, 101, p, 2)
+        result, path, dis, cells, start, stop = repeated_a_star(grid, 101, p, 2) #running same grid on repeated A*
 
         Normal_t = stop-start
         Normal_l = len(path)

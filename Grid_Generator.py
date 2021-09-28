@@ -1,6 +1,6 @@
 import random
 
-def gen_grid(dim, p):
+def gen_grid(dim, p): #function to generate grids. dim: dimensions of the grid, p: density of the grid
 
     s=[]
     for i in range(dim):
@@ -11,7 +11,7 @@ def gen_grid(dim, p):
                 s.append((i,j))
     
     k=int(p*((dim*dim)-2))
-    blocked=random.sample(s,k)
+    blocked=random.sample(s,k) #makes use of the random library
     
     grid=[[0 for i in range(dim)] for j in range(dim)]
 

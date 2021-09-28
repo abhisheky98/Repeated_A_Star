@@ -1,5 +1,5 @@
 from Grid_Generator import gen_grid
-from A_Star_test import a_star
+from Repeated_A_Star import repeated_a_star
 
 def find_path(parent, dim):
     i,j = dim-1, dim-1
@@ -9,23 +9,21 @@ def find_path(parent, dim):
         (i,j) = parent[i][j]
     return(path)
 
-grid = gen_grid(10, 0.03)
+grid = gen_grid(5, 0.03)
+grid = [[0, 0, 0, 0, 0], [0, 1, 1, 1, 0], [0, 1, 1, 0, 0], [0, 1, 1, 0, 1], [0, 0, 0, 0, 0]]
 #grid = [[0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-#print(grid)
+print(grid)
 
 for x in grid:
     print(x)
 
-result, start, stop, parent, g, h, f, order = a_star(10, 0.5, grid, 2)
+result, final, dis, cells, start, stop = repeated_a_star(grid, 5, 0.03, 2)
 
-path = find_path(parent, 10)
-
-print("order")
-print(order)
+#path = find_path(parent, 5)
 
 print("path")
-print(path)
+print(final)
 
 print(result)
 for x in parent:

@@ -1,5 +1,7 @@
 import timeit
 
+#Entire code is similar to the repeated A* code except for the commented code
+
 def dist(i, j, dim, heu):
     if heu == 1:
         return ( ((i-dim-1) ** 2) + ((j-dim-1) ** 2) ) ** 0.5
@@ -153,7 +155,7 @@ def smart_repeated_a_star(grid, dim, P, heu):
             break
 
         flag = True
-        while flag and (si, sj) != (0,0):
+        while flag and (si, sj) != (0,0): #Checking for the optimal start node to start A* from
             flag = True
             for child in find_child(si, sj, dis, dim):
                 if child not in path:

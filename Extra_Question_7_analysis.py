@@ -19,7 +19,7 @@ for index, row in record.iterrows():
     cells = cells + row['Cells Processed']
 
     if x == 30:
-        df1 = pd.DataFrame([[row['p'], traj/100, T_FDG/100, FDG_FG/100, cells/100]], columns=['p', 'Avg Trajectory Length', 'Avg T_FDG', 'Avg FDG_FG', 'Avg Cells Processed'])
+        df1 = pd.DataFrame([[row['p'], traj/30, T_FDG/30, FDG_FG/30, cells/30]], columns=['p', 'Avg Trajectory Length', 'Avg T_FDG', 'Avg FDG_FG', 'Avg Cells Processed'])
         df = pd.concat([df,df1])
         traj = 0
         T_FDG = 0
